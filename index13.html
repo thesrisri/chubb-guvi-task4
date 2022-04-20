@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <script>
+      const text1 = document.createElement("input");
+      text1.setAttribute("id", "txt1");
+      const text2 = document.createElement("input");
+      text2.setAttribute("id", "txt2");
+
+      const text3 = document.createElement("input");
+      text3.setAttribute("id", "txt3");
+
+      const print = document.createElement("input");
+      print.setAttribute("id", "print");
+
+      const btn = document.createElement("button");
+      btn.setAttribute("id", "btn");
+
+      text1.innerHTML = "";
+      text2.innerHTML = "";
+      text3.innerHTML = "";
+      print.innerHTML = "";
+      btn.innerHTML = "Click Me";
+
+      document.body.appendChild(text1);
+      document.body.appendChild(text2);
+      document.body.appendChild(text3);
+      document.body.appendChild(btn);
+      btn.addEventListener("click", myFunction);
+
+      function myFunction() {
+        var text1 = document.getElementById("txt1").value;
+        var text2 = document.getElementById("txt2").value;
+        var text3 = document.getElementById("txt3").value;
+
+        if (text1 == "" || text2 == "" || text3 == "") {
+          alert("please enter values");
+        } else {
+          document.body.appendChild(print);
+          print.value = text1 + text2 + text3;
+        }
+      }
+    </script>
+  </body>
+</html>
